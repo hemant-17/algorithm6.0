@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+Project
+{% endblock %}
+{% block head %}
+
+
+{% endblock %}
+{% block body %}
+<div class="container" style="margin-top: 150px; text-align: center;">
+<form action="/stock/ui/" method="POST">{% csrf_token %}
+        <h2>Explain your Project Idea</h2>
+        <h4>Be Precise in your project description you can always edit this later</h4>
+        <textarea id="w3mission" rows="4" cols="50" style="margin-top: 0px; margin-bottom: 0px ;height: 277px;">
+
+            </textarea><br>
+            <button class="bttn btn-primary" type="submit">
+                Submit
+            </button>
+        </form>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Profile {% endblock %}
+{% block body %}
+
+  <!--search bar-->
+  <div class="justify-content-center my-5 ml-5 mx-5" style="margin-top: 100px;">
+    <div class="jumbotron jumbotron-fluid bg-dark" style="border-radius: 10px; opacity: 1; margin-top: 100px;">
+      <div class="container">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr " id="myInput" type="text" onkeyup="myFunction()"  placeholder="Search for any job Skills" style="width: 90%; opacity: 1;">
+          <button class="btn btn-outline-success my-2 my-sm-0 ml-3" type="submit" style="opacity: 1;">Search</button>
+        </form>
+      </div>
+    </div>
+
+
+  <div class="justify-content-start my-5" id="myUL" align="center">
+      {% for jobs in job %}
+    <div class="card " style="width: 70%;">
+        <div class="row Search " >
+          <div class="col-3 ">
+            <!-- <img src="001.png" class="card-img-top" alt="..." style="width: 10rem; height: 10rem;"> -->
+          </div> --
+        <div class="card-body col-6">
+          <h5 class="card-title" align="left"><b>{{jobs.company_id}}</b></h5>
+          <p class="card-text" align="left"><b>Job Title:</b> {{jobs.job_title}} .</p>
+
+          <p class="card-text" align="left"><b>Description:</b> {{jobs.job_desc}}.</p>
+          <p class="card-text Skills " align="left">Skills:<b> {{jobs.skills_required}}.</b></p>
+
+
+        </div>
+        <div class="col-2" align="center">
+            <a href="/stock/jobview/{{jobs.company_id}}/{{jobs.job_title}}/{{user}}" class="btn btn-primary my-5">View</a>
+        </div>
+        </div>
+
+</div>
+
+
+
+      {% endfor %}
+     
+  </div>
+  {% endblock %}
+  {% block js %}
+  <script>
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue,searc;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        // console.log(filter)
+        ul = document.getElementById("myUL");
+        console.log(ul)
+        searc= ul.getElementsByClassName("Search");
+        console.log(searc)
+        li = ul.getElementsByClassName("Skills");
+        console.log(li)
+
+        // searc[0].remove()
+        // console.log(li)
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("b")[0];
+            // console.log(a)
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                searc[i].style.display = "";
+            } else {
+                searc[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+  {% endblock %}

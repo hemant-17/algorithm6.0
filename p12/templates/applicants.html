@@ -1,0 +1,24 @@
+{% extends 'lockhome.html' %}
+{% load static %}
+{% block title %}Your Courses {% endblock %}
+{% block head %}
+{% endblock %}
+{% block body %}
+
+{% for i in applicants %}
+<div class="justify-content-center my-5" align="center">
+    <div class="card " style="width: 70%;">
+        <div class="row">
+          <div class="col-3">
+            <img src="{% static 'google.jpeg' %}" class="card-img-top " alt="..." style="width: 10rem; height: 10rem;">
+          </div>
+        <div class="card-body col-8">
+          <h5 class="card-title">{{ i.applyjobs }}</h5>
+          <p class="card-text">{{ i.skills }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        </div>
+      </div>
+  </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Profile {% endblock %}
+{% block body %}
+<div class="row" style="margin-top: 100px;">
+    <div class="jumbotron jumbotron-fluid ml-5 mx-3 my-3 col-4" style="width: 18rem; border-radius: 10px;">
+        <div class="container">
+            <h4 align="left" class="ml-3"><b>{{company.company_name}}</b></h4>
+
+
+            <hr>
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col ">Description</th>
+                    <!-- <th scope="col">Duration</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="1" onclick="selectCouse(id)">{{company.desc}}</td>
+
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+
+      <div class="jumbotron jumbotron-fluid col-6 mx-5 my-3" style="border-radius: 10px;">
+        <div class="container">
+          <h4 align="left" class="ml-3"><b>{{job.job_title}}</b></h4>
+
+
+          <hr>
+          <table class="table table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col ">Description</th>
+                  <!-- <th scope="col">Duration</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="1" onclick="selectCouse(id)">{{job.job_desc}}</td>
+
+                </tr>
+                <tr>
+                  <td id="1" onclick="selectCouse(id)">{{job.skills_required}}</td>
+
+                </tr>
+                <tr>
+                  <td id="1" onclick="selectCouse(id)">{{job.education}}</td>
+
+                </tr>
+                <tr>
+                  <td id="1" onclick="selectCouse(id)">{{job.aboutjob}}</td>
+
+                </tr>
+                <tr>
+                  <td id="1" onclick="selectCouse(id)">{{job.education_years}}</td>
+
+                </tr>
+                <tr>
+                  <td id="1" onclick="selectCouse(id)">skills <b> {{user}}/{{req}}</b></td>
+
+                </tr>
+
+
+              </tbody>
+
+
+
+            </table>
+            <button type="submit" id="submitbut" class="btn btn-danger edit ">Apply</button>
+      </div>
+    </div>
+      </div>
+  </div>
+  {% endblock %}

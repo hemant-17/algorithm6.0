@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+Project
+{% endblock %}
+{% block head %}
+
+
+{% endblock %}
+{% block body %}
+<div class="container" style="margin-top: 150px; text-align: center;">
+
+        <h2>First let you get Started</h2>
+        <h4>Pick up a category to choose your project you can always edit this later</h4>
+
+        <select id="blog-cat-dropdown" name="categories">
+          <option>SELECT CATEGORY</option>
+          <option onclick="URL()">MARKETING</option>
+          <option value="/blog/seo/">SEARCH</option>
+          <option value="/blog/social-media/">SOCIAL MEDIA</option>
+          <option value="/blog/web-design/">WEB DESIGN</option>
+          <option value="/blog/internet/">INTERNET</option>
+          <option value="/blog/company/">WEBFX NEWS</option>
+      </select>
+
+
+<!-- Example single danger button -->
+<!-- <form action="/stock/">
+    <label for="fields">Choose your topic:</label>
+    <select class="btn btn-light" id="cars" name="cars">
+      <option  id='Technology'value="http://www.google.com"><a href="http://www.google.com">Technology</a></option>
+      <option id='fitness'value="saab">Fitness</option>
+      <option value="fiat">Arts</option>
+      <option value="audi">Business</option>
+    </select>
+    <input type="submit">
+  </form> -->
+
+{% endblock %}
+{% block js %}
+function URL() {
+  location.href = 'http://127.0.0.1:8000/stock/ui';
+}
+{% endblock %}
